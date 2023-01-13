@@ -2,6 +2,9 @@
 	<div class="row justify-content-center">
 		<div class="col-4">
 			<h2>Add a new Book</h2>
+			<div class="alert alert-danger" role="alert" *ngIf="errorMessage!=''">There was an error. {{ errorMessage }}</div>
+			<div class="alert alert-success" role="alert" *ngIf="added==true">The book has been added to the server.</div>
+
 			<form #addbookform="ngForm" (ngSubmit)="onSubmit(addbookform)" novalidate>
 				<div class="mb-3">
 					<label class="form-label" for="nameBook">Name</label>
@@ -19,7 +22,7 @@
 				</div>
 
 				<div class="mb-3">
-					<label class="form-label" for="priceBook">Publish year</label>
+					<label class="form-label" for="priceBook">Price</label>
 					<input type="number" step='0.01' ngModel required name="price" class="form-control" id="priceBook" placeholder="Price ..." />
 				</div>
 

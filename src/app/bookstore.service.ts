@@ -12,4 +12,12 @@ export class BookstoreService {
   getBooksFromServer():Observable<any> {
     return this._http.get<any>("http://localhost:8081/bookstore")
   }
+
+  addBookToServer(data: any) {
+    return this._http.post<any>("http://localhost:8081/bookstore", data)
+  }
+
+  deleteBookFromServer(id: any) {
+    return this._http.delete<any>("http://localhost:8081/bookstore/" + id)
+  }
 }

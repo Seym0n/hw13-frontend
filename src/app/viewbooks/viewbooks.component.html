@@ -22,14 +22,14 @@
 						<td>{{book.author}}</td>
 						<td>{{book.dateYear}}</td>
 						<td>{{book.price}}</td>
-						<td>{{book.dateYear}}</td>
-						<td><button type="button" class="btn btn-secondary">Edit</button>&nbsp; <button type="button" class="btn btn-danger">Delete</button></td>
+						<td><button type="button" class="btn btn-secondary">Edit</button>&nbsp; <button type="button" (click)="deleteBook(book.id)" class="btn btn-danger">Delete</button></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="col-md-3 text-center">
-			<button type="button" class="btn btn-primary" (click)="RedirectToAddBook()">Add a new book</button>
+			<button type="button" class="btn btn-primary" (click)="RedirectToAddBook()">Add a new book</button><br /><br />
+			<div class="alert alert-{{ alertType }}" *ngIf="alertMsg!=''" role="alert">{{ alertMsg }}</div>
 		</div>
 	</div>
 </div>

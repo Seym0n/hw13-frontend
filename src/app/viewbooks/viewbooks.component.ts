@@ -9,6 +9,9 @@ import { Book } from '../book';
   styleUrls: ['./viewbooks.component.css']
 })
 export class ViewbooksComponent implements OnInit {
+
+  alertMsg = '';
+  alertType = '';
   books: Array<Book> = [];
 
   constructor(private _service: BookstoreService, private _route: Router) {}
@@ -23,5 +26,19 @@ export class ViewbooksComponent implements OnInit {
 
   RedirectToAddBook(){
     this._route.navigate(['/addbook'])
+  }
+
+  deleteBook(id: any){
+    this._service.deleteBookFromServer(id).subscribe({
+        next: data => {
+            this.alertType = 'success';
+            this.alertMsg = 'The book has been deleted';
+            this.getbooks();
+        },
+        error: error => {
+            this.alertType = 'danger';
+            this.alertMsg = 'There was an error';
+        }
+    })
   }
 }

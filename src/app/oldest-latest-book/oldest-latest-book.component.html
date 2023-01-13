@@ -1,0 +1,36 @@
+<div class="container pt-3">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>{{ heading }}</h2>
+			<table class="table table-bordered">
+				<tbody>
+					<tr *ngIf="book==null">
+						<td colspan="6" style="text-align: center;"><strong>There is no book</strong></td>
+					</tr>
+					<tr>
+						<td scope="row">#</td>
+						<td>{{ book.id }}</td>
+					</tr>
+					<tr>
+						<td scope="row">Name</td>
+						<td>{{ book.name }}</td>
+					</tr>
+					<tr>
+						<td scope="row">Author</td>
+						<td>{{ book.author }}</td>
+					</tr>
+					<tr>
+						<td scope="row">Publish year</td>
+						<td>{{ book.dateYear }}</td>
+					</tr>
+					<tr>
+						<td scope="row">Price</td>
+						<td>{{ book.price }}</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>
+

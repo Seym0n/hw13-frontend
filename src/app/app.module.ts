@@ -7,12 +7,14 @@ import { AddbookComponent } from './addbook/addbook.component';
 import { ViewbooksComponent } from './viewbooks/viewbooks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { OldestLatestBookComponent } from './oldest-latest-book/oldest-latest-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddbookComponent,
-    ViewbooksComponent
+    ViewbooksComponent,
+    OldestLatestBookComponent
   ],
   imports: [
     BrowserModule,
