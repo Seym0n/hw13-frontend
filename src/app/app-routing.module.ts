@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewbooksComponent } from './viewbooks/viewbooks.component';
 import { AddbookComponent } from './addbook/addbook.component';
 
-const routes: Routes = [ {path:'addbook', component:AddbookComponent}, {path:'viewbooks', component:ViewbooksComponent}];
+const routes: Routes = [ {path:'addbook', component:AddbookComponent},
+                         {path:'', pathMatch: 'full', redirectTo:'viewbooks'},
+                         {path:'viewbooks', component:ViewbooksComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,1 +1,30 @@
-<p>addbook works!</p>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-4">
+			<h2>Add a new Book</h2>
+			<form #addbookform="ngForm" (ngSubmit)="onSubmit(addbookform)" novalidate>
+				<div class="mb-3">
+					<label class="form-label" for="nameBook">Name</label>
+					<input type="text" name="name" ngModel required class="form-control" id="nameBook" placeholder="Name ..." />
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" for="authorBook">Author</label>
+					<input type="text" name="author" ngModel required class="form-control" id="authorBook" placeholder="Author ..." />
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" for="publishYearBook">Publish year</label>
+					<input type="number" step='1' ngModel required name="dateYear" class="form-control" id="publishYearBook" placeholder="Year ..." />
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" for="priceBook">Publish year</label>
+					<input type="number" step='0.01' ngModel required name="price" class="form-control" id="priceBook" placeholder="Price ..." />
+				</div>
+
+				<button type="submit" class="btn btn-success">Add Book</button>
+		    </form>
+		</div>
+	</div>
+</div>
